@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arrays.c                                           :+:      :+:    :+:   */
+/*   sort_stack_encore.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 23:48:01 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/10 10:18:11 by jbernard         ###   ########.fr       */
+/*   Created: 2022/02/07 11:33:42 by jbernard          #+#    #+#             */
+/*   Updated: 2022/02/07 11:50:43 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_arrays	*init_arrays(char *argv[], int argc)
+void    less_then_three_a(t_stack *s)
 {
-	t_arrays	*a;
-	int	i;
+    if (s->stack[0] > s->stack[1])
+        swap(s);
+}
 
-	a = malloc(sizeof(t_arrays));
-	a->a = init_stack(argc, 1);
-	a->b = init_stack(argc, 0);
-	i = 0;
-	while (i < argc)
-	{
-		a->a->stack[i] = ft_atoi(argv[i]);
-		i++;
-	}
-	a->a->average = get_average(a->a->stack, argc);
-	return (a);
+void	less_then_three_b(t_stack *s)
+{
+	if (s->stack[1] > s->stack[0])
+		swap(s);
 }

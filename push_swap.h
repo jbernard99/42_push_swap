@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 22:30:03 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/04 22:30:03 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:21:35 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
 typedef struct	s_stack {
 	int		*stack;
@@ -27,14 +28,36 @@ typedef struct	s_stack {
 typedef struct	s_arrays {
 	t_stack *a;
 	t_stack *b;
+	t_stack *c;
 }	t_arrays;
 
 // -- push_swap.c -- //
 int	main(int argc, char *argv[]);
 
+// -- sort_stack.c -- //
+void    sort_stack(t_arrays *a);
+
+// -- sort_stack_encore.c -- //
+void    less_then_three_a(t_stack *s);
+void	less_then_three_b(t_stack *s);
+
+// -- moves.c -- //
+void	swap(t_stack *s);
+void    rotate(t_stack *s);
+void	r_rotate(t_stack *s);
+void	push_a(t_stack *s_a, t_stack *s_b);
+void	push_b(t_stack *s_a, t_stack *s_b);
+
 // -- stack.c -- //
 int	get_average(int *s, int size);
+void	copie_stack_a(t_arrays *a);
 t_stack	*init_stack(int size, int is_a);
+
+// -- indexing.c -- //
+void	array_indexing(t_arrays *a);
+
+// -- radix_sort.c -- //
+void	radix_sort(t_stack *s_a, t_stack *s_b);
 
 // -- arrays.c -- //
 t_arrays	*init_arrays(char *argv[], int argc);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 23:11:55 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/07 15:42:53 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/07 11:29:25 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_bzero(int *s, int n)
 
 int	ft_atoi(char *str)
 {
-	printf("Ft_atoi:\nReceiving: %s\n", str);
 	int		sign;
 	int		nbr;
 	long	long_nbr;
@@ -66,7 +65,6 @@ int	ft_atoi(char *str)
 	if (long_nbr < -2147483648 || long_nbr >= 2147483647)
 		error_message("Number to big!\n");
 	nbr = long_nbr;
-	printf("Returning : %d", nbr);
 	return (nbr * sign);
 }
 

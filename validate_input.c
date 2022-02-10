@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 23:44:16 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/04 23:44:16 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:03:28 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,29 @@ void	check_unauthorized_characters(char c)
 	}
 }
 
-void	check_duplicates(char *s1, char *s2)
+void	check_duplicates(int x, int y)
 {
-	if (ft_atoi(s1) == ft_atoi(s2))
+	if (x == y)
 		error_message("Duplicate input found!\n");
+}
+
+void	check_min_max(int x)
+{
+	if (x < (long)INT_MIN || x > (long)INT_MAX)
+			error_message("Digit too bit or too small!\n");
 }
 
 void validate_input(char *argv[], int argc)
 {
 	int	i;
 	int	j;
+	int x;
 
 	i = 0;
 	while (i < argc)
 	{
 		j = 0;
+		x = ft_atoi(argv[i]);
 		while (argv[i][j])
 		{
 			check_unauthorized_characters(argv[i][j]);
@@ -58,10 +66,10 @@ void validate_input(char *argv[], int argc)
 		j = i + 1;
 		while (j < argc && i < argc - 1)
 		{
-			check_duplicates(argv[i], argv[j]);
+			check_duplicates(x, ft_atoi(argv[j]));
 			j++;
 		}
+		check_min_max(x);
 		i++;
 	}
-	printf("\n\n\n\n");
 }

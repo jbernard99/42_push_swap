@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 22:43:59 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/07 15:32:22 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:35:48 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int split_argv_size(char *argv[])
 void	print_state(t_arrays *a, int argc)
 {
 	int	i;
+	
 	printf("\n == Current State ==\n");
 	printf("\n - Stack A:\n	");
 	i = 0;
@@ -48,7 +49,7 @@ int	main(int argc, char *argv[])
 	t_arrays	*arrays;
 	int	to_free;
 	int	i;
-
+	
 	to_free = 0;
 	argv++;
 	argc--;
@@ -66,22 +67,11 @@ int	main(int argc, char *argv[])
 			error_message("Not enough parameters!\n");
 	}
 	validate_input(argv, argc);
-	i = 0;
-	while (i < argc)
-	{
-		printf("%d - %s\n", i, argv[i]);
-		i++;
-	}
 	arrays = init_arrays(argv, argc);
-	
-	//
-	printf("a->size = %d\na->average = %d\na->stack = \n", arrays->a->size, arrays->a->average);
-	i = 0;
-	while (i < argc)
-	{
-		printf("%d - %s\n", i, argv[i]);
-		i++;
-	}
+	array_indexing(arrays);
+	sort_stack(arrays);
+	print_state(arrays, argc);
+
 	if (to_free != 0)
 		free(argv);
 }

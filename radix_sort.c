@@ -1,52 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 23:47:38 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/09 12:20:24 by jbernard         ###   ########.fr       */
+/*   Created: 2022/02/08 08:45:53 by jbernard          #+#    #+#             */
+/*   Updated: 2022/02/09 12:35:23 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_average(int *s, int size)
-{
-	int i;
-	int total;
-
-	i = 0;
-	total = 0;
-	while (i < size)
-	{
-		total = total + s[i];
-		i++;
-	}
-	return (total / size);
-}
-
-void	copie_stack_a(t_arrays *a)
+int	find_nb_byte(t_stack *s)
 {
 	int		i;
 
 	i = 0;
-	while (i < a->a->size)
-	{
-		a->c->stack[i] = a->a->stack[i];
+	while (s->size >> i != 0)
 		i++;
-	}
+	return (i);
 }
 
-t_stack	*init_stack(int size, int is_a)
+void	radix_sort(t_stack *s_a, t_stack *s_b)
 {
-	t_stack *s;
-	
-	s = malloc(sizeof(t_stack));
-	s->stack = ft_calloc(size * 2, sizeof(int));
-	s->size = size;
-	s->average = 0;
-	s->is_a = is_a;
-	return (s);
+	int		i;
+	int		j;
+	int		k;
+	int		len;
+	int		nb_byte;
+
+	i = 0;
+	len = s_a->size;
+	nb_byte = find_nb_byte(s_a);
+	printf("len = %d\nnb_bit = %d\n", len, nb_byte);
+	while (i < nb_byte)
+	{
+		j = 0;
+		while (j < len)
+		{
+			k = s_a->stack[0];
+			if (((k >> i) & 1) == 1)
+				rotate(s_a);
+			else
+				push_b(s_a, s_b);
+			j++;
+		}
+		while (s_b->stack[0] != 0)
+			push_a(s_a, s_b);
+		i++;
+	}
 }
