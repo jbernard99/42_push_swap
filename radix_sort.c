@@ -30,24 +30,22 @@ void	radix_sort(t_stack *s_a, t_stack *s_b)
 	int		len;
 	int		nb_byte;
 
-	i = 0;
+	i = -1;
 	len = s_a->size;
 	nb_byte = find_nb_byte(s_a);
 	printf("len = %d\nnb_bit = %d\n", len, nb_byte);
-	while (i < nb_byte)
+	while (++i < nb_byte)
 	{
-		j = 0;
-		while (j < len)
+		j = -1;
+		while (++j < len)
 		{
 			k = s_a->stack[0];
 			if (((k >> i) & 1) == 1)
 				rotate(s_a);
 			else
 				push_b(s_a, s_b);
-			j++;
 		}
 		while (s_b->stack[0] != 0)
 			push_a(s_a, s_b);
-		i++;
 	}
 }

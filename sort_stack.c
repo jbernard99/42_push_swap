@@ -12,23 +12,23 @@
 
 #include "push_swap.h"
 
-int is_stack_sorted(t_stack *s)
+int	is_stack_sorted(t_stack *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < s->size - 1)
-    {
-        if (s->stack[i] > s->stack[i + 1])
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 0;
+	while (i < s->size - 1)
+	{
+		if (s->stack[i] > s->stack[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-void    stack_of_three(t_stack *s)
+void	stack_of_three(t_stack *s)
 {
-    if (s->stack[0] > s->stack[1] && s->stack[0] < s->stack[2])
+	if (s->stack[0] > s->stack[1] && s->stack[0] < s->stack[2])
 		swap(s);
 	else if (s->stack[0] > s->stack[1] && s->stack[1] > s->stack[2])
 	{
@@ -69,16 +69,16 @@ void	stack_of_five(t_arrays *a)
 		push_a(a->a, a->b);
 }
 
-void    sort_stack(t_arrays *a)
+void	sort_stack(t_arrays *a)
 {
-    if (is_stack_sorted(a->a))
-        return ;
-    if (a->a->size < 3)
-        less_then_three_a(a->a);
-    if (a->a->size == 3)
-        stack_of_three(a->a);
-    if (a->a->size == 4 || a->a->size == 5)
-        stack_of_five(a);
-    if (a->a->size > 5)
-        radix_sort(a->a, a->b);
+	if (is_stack_sorted(a->a))
+		return ;
+	if (a->a->size < 3)
+		less_then_three_a(a->a);
+	if (a->a->size == 3)
+		stack_of_three(a->a);
+	if (a->a->size == 4 || a->a->size == 5)
+		stack_of_five(a);
+	if (a->a->size > 5)
+		radix_sort(a->a, a->b);
 }

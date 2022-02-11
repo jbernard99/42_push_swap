@@ -82,4 +82,3 @@ void	array_indexing(t_arrays *a)
 	free(a->c->stack);
 	free(a->c);
 }
-

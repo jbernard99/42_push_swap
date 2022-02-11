@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int split_argv_size(char *argv[])
+int	split_argv_size(char *argv[])
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (argv[i])
@@ -25,7 +25,7 @@ int split_argv_size(char *argv[])
 void	print_state(t_arrays *a, int argc)
 {
 	int	i;
-	
+
 	printf("\n == Current State ==\n");
 	printf("\n - Stack A:\n	");
 	i = 0;
@@ -47,9 +47,8 @@ void	print_state(t_arrays *a, int argc)
 int	main(int argc, char *argv[])
 {
 	t_arrays	*arrays;
-	int	to_free;
-	int	i;
-	
+	int			to_free;
+
 	to_free = 0;
 	argv++;
 	argc--;
@@ -70,8 +69,6 @@ int	main(int argc, char *argv[])
 	arrays = init_arrays(argv, argc);
 	array_indexing(arrays);
 	sort_stack(arrays);
-	print_state(arrays, argc);
-
 	if (to_free != 0)
 		free(argv);
 }

@@ -44,14 +44,14 @@ void	check_duplicates(int x, int y)
 void	check_min_max(int x)
 {
 	if (x < (long)INT_MIN || x > (long)INT_MAX)
-			error_message("Digit too bit or too small!\n");
+		error_message("Digit too bit or too small!\n");
 }
 
-void validate_input(char *argv[], int argc)
+void	validate_input(char *argv[], int argc)
 {
 	int	i;
 	int	j;
-	int x;
+	int	x;
 
 	i = 0;
 	while (i < argc)
