@@ -38,8 +38,7 @@ int	main(int argc, char *argv[])
 
 	to_free = 0;
 	argv++;
-	argc--;
-	if (argc < 1)
+	if (--argc < 1)
 		error_message("Not enough parameters!\n");
 	else if (argc == 1)
 	{
@@ -57,7 +56,6 @@ int	main(int argc, char *argv[])
 	array_indexing(arrays);
 	sort_stack(arrays);
 	free_all(arrays);
-
 	if (to_free != 0)
 		free(argv);
 }
