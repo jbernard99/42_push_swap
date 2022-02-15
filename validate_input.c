@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 23:44:16 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/09 12:03:28 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/15 09:21:54 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@ int	has_space(char *str)
 	return (0);
 }
 
-void	check_unauthorized_characters(char c)
+void	check_unauthorized_characters(char c, int is_first)
 {
 	if (c < 48 || c > 57)
 	{
-		if (c != 45)
-			error_message("Unauthorized Character found!\n");
+		if (c == 45 && is_first == 0)
+			return ;
+		error_message("Unauthorized Character found!\n");
 	}
 }
 
@@ -60,7 +61,7 @@ void validate_input(char *argv[], int argc)
 		x = ft_atoi(argv[i]);
 		while (argv[i][j])
 		{
-			check_unauthorized_characters(argv[i][j]);
+			check_unauthorized_characters(argv[i][j], j);
 			j++;
 		}
 		j = i + 1;

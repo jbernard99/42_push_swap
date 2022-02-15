@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 08:45:53 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/09 12:35:23 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/15 09:50:20 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	radix_sort(t_stack *s_a, t_stack *s_b)
 	i = 0;
 	len = s_a->size;
 	nb_byte = find_nb_byte(s_a);
-	printf("len = %d\nnb_bit = %d\n", len, nb_byte);
 	while (i < nb_byte)
 	{
 		j = 0;

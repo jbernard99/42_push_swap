@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 22:43:59 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/09 12:35:48 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/15 09:53:41 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,13 @@ int split_argv_size(char *argv[])
 	return (i);
 }
 
-void	print_state(t_arrays *a, int argc)
+void	free_all(t_arrays *a)
 {
-	int	i;
-	
-	printf("\n == Current State ==\n");
-	printf("\n - Stack A:\n	");
-	i = 0;
-	while (i < argc)
-	{
-		printf(" %d", a->a->stack[i]);
-		i++;
-	}
-	printf("\n\n - Stack B:\n	");
-	i = 0;
-	while (i < argc)
-	{
-		printf(" %d", a->b->stack[i]);
-		i++;
-	}
-	printf("\n\n");
+	free(a->a->stack);
+	free(a->a);
+	free(a->b->stack);
+	free(a->b);
+	free(a);
 }
 
 int	main(int argc, char *argv[])
@@ -70,7 +57,7 @@ int	main(int argc, char *argv[])
 	arrays = init_arrays(argv, argc);
 	array_indexing(arrays);
 	sort_stack(arrays);
-	print_state(arrays, argc);
+	free_all(arrays);
 
 	if (to_free != 0)
 		free(argv);
