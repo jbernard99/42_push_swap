@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void    less_then_three_a(t_stack *s)
+void	less_then_three_a(t_stack *s)
 {
-    if (s->stack[0] > s->stack[1])
-        swap(s);
+	if (s->stack[0] > s->stack[1])
+		swap(s);
 }
 
 void	less_then_three_b(t_stack *s)

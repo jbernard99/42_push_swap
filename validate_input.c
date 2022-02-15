@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 23:44:16 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/15 09:21:54 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/15 10:01:14 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ void	check_duplicates(int x, int y)
 void	check_min_max(int x)
 {
 	if (x < (long)INT_MIN || x > (long)INT_MAX)
-			error_message("Digit too bit or too small!\n");
+		error_message("Digit too bit or too small!\n");
 }
 
-void validate_input(char *argv[], int argc)
+void	validate_input(char *argv[], int argc)
 {
 	int	i;
 	int	j;
-	int x;
+	int	x;
 
 	i = 0;
 	while (i < argc)

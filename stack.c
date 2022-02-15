@@ -14,8 +14,8 @@
 
 int	get_average(int *s, int size)
 {
-	int i;
-	int total;
+	int	i;
+	int	total;
 
 	i = 0;
 	total = 0;
@@ -29,7 +29,7 @@ int	get_average(int *s, int size)
 
 void	copie_stack_a(t_arrays *a)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (i < a->a->size)
@@ -41,8 +41,8 @@ void	copie_stack_a(t_arrays *a)
 
 t_stack	*init_stack(int size, int is_a)
 {
-	t_stack *s;
-	
+	t_stack	*s;
+
 	s = malloc(sizeof(t_stack));
 	s->stack = ft_calloc(size * 2, sizeof(int));
 	s->size = size;

@@ -14,13 +14,13 @@
 
 void	ft_putstr(char *str)
 {
-		write(1, str, ft_strlen(str));
+	write(1, str, ft_strlen(str));
 }
 
 int	ft_strlen(char	*str)
 {
 	int	i;
-	
+
 	if (!*str)
 		return (0);
 	i = 0;
@@ -71,6 +71,7 @@ int	ft_atoi(char *str)
 int	*ft_calloc(int count, int size)
 {
 	int	*s;
+
 	if (!count || !size)
 	{
 		count = 1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arrays.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 23:48:01 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/10 10:18:11 by jbernard         ###   ########.fr       */
+/*   Created: 2022/02/11 19:21:27 by jbernard          #+#    #+#             */
+/*   Updated: 2022/02/11 19:21:27 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_arrays	*init_arrays(char *argv[], int argc)
 {
 	t_arrays	*a;
-	int	i;
+	int			i;
 
 	a = malloc(sizeof(t_arrays));
 	a->a = init_stack(argc, 1);

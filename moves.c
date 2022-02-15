@@ -25,9 +25,9 @@ void	swap(t_stack *s)
 		ft_putstr("sb\n");
 }
 
-void    rotate(t_stack *s)
+void	rotate(t_stack *s)
 {
-    int	i;
+	int	i;
 	int	temp;
 
 	temp = s->stack[0];
@@ -36,7 +36,7 @@ void    rotate(t_stack *s)
 	{
 		s->stack[i] = s->stack[i + 1];
 		i++;
-	} 
+	}
 	s->stack[s->size - 1] = temp;
 	ft_putstr("ra\n");
 }
@@ -45,7 +45,7 @@ void	r_rotate(t_stack *s)
 {
 	int	i;
 	int	temp;
-	
+
 	i = s->size - 1;
 	temp = s->stack[s->size - 1];
 	while (i > 0)
