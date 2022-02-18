@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 22:30:03 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/09 12:21:35 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/18 11:30:07 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ int			ft_strlcpy(char *dest, char *src, int size);
 char		**ft_split(char *s, char c);
 
 // -- error_message.c -- //
-void		error_message(char *e);
+void		error_message();
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 23:44:16 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/15 10:01:14 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/18 11:30:35 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ void	check_unauthorized_characters(char c, int is_first)
 	{
 		if (c == 45 && is_first == 0)
 			return ;
-		error_message("Unauthorized Character found!\n");
+		error_message();
 	}
 }
 
 void	check_duplicates(int x, int y)
 {
 	if (x == y)
-		error_message("Duplicate input found!\n");
+		error_message();
 }
 
 void	check_min_max(int x)
 {
 	if (x < (long)INT_MIN || x > (long)INT_MAX)
-		error_message("Digit too bit or too small!\n");
+		error_message();
 }
 
 void	validate_input(char *argv[], int argc)
