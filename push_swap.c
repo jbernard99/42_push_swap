@@ -24,7 +24,7 @@ int	split_argv_size(char *argv[])
 
 void	free_all(t_arrays *a, char *argv[], int is_splited)
 {
-	int i;
+	int	i;
 
 	free(a->a->stack);
 	free(a->a);

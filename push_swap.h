@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 22:30:03 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/18 11:30:07 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:34:43 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ int			ft_strlcpy(char *dest, char *src, int size);
 char		**ft_split(char *s, char c);
 
 // -- error_message.c -- //
-void		error_message();
+void		error_message(void);
 
 #endif

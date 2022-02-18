@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   error_message.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 23:09:00 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/18 11:30:16 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:34:40 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_message()
+void	error_message(void)
 {
 	write(1, "Error\n", 7);
 	exit(0);
