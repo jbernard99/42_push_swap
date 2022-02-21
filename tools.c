@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 23:11:55 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/07 11:29:25 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/21 21:04:54 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_atoi(char *str)
 		str++;
 	}
 	if (long_nbr < -2147483648 || long_nbr >= 2147483647)
-		error_message("Number to big!\n");
+		error_message();
 	nbr = long_nbr;
 	return (nbr * sign);
 }
@@ -79,7 +79,7 @@ int	*ft_calloc(int count, int size)
 	}
 	s = malloc(size * count);
 	if (!s)
-		error_message("Memory allocation error!\n");
+		error_message();
 	ft_bzero(s, size);
 	return (s);
 }
