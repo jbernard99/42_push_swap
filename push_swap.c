@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 22:43:59 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/18 11:30:53 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/21 14:16:51 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	split_argv_size(char *argv[])
 	return (i);
 }
 
-void	free_all(t_arrays *a, char *argv[], int is_splited)
+void	free_all(t_arrays *a, char *argv[], int to_free)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ void	free_all(t_arrays *a, char *argv[], int is_splited)
 	free(a->b->stack);
 	free(a->b);
 	free(a);
-	if (is_splited)
+	if (to_free)
 	{
 		i = 0;
 		while (argv[i])
