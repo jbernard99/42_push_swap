@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_message.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 23:09:00 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/18 17:34:40 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/21 13:56:21 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	error_message(void)
 {
-	write(1, "Error\n", 7);
+	write(1, "Error\n", 6);
 	exit(0);
 }
