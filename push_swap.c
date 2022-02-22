@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 22:43:59 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/21 14:16:51 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:55:37 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char *argv[])
 	int			to_free;
 
 	to_free = 0;
-	argv++;
+	++argv;
 	if (--argc < 1)
 		return (0);
 	else if (argc == 1)
@@ -61,7 +61,10 @@ int	main(int argc, char *argv[])
 			argc = split_argv_size(argv);
 		}
 		else
+		{
+			validate_input(argv, argc);
 			return (0);
+		}
 	}
 	validate_input(argv, argc);
 	arrays = init_arrays(argv, argc);
