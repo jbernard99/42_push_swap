@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 11:19:17 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/08 08:43:52 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/27 16:51:54 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	stack_of_five(t_arrays *a)
 
 void	sort_stack(t_arrays *a)
 {
+	a->a->average = get_average(a->a->stack, a->a->size);
 	if (is_stack_sorted(a->a))
 		return ;
 	if (a->a->size < 3)

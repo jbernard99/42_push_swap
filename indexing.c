@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 12:07:02 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/09 12:31:44 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/27 16:52:07 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int	partition_array(int stack[], int low, int high)
 {
 	int		i;
 	int		j;
-	int		pivot;
+	int		temp;
 
 	j = low;
-	i = (low - 1);
+	i = low - 1;
 	while (j <= high - 1)
 	{
-		pivot = stack[high];
-		if (stack[j] < pivot)
+		temp = stack[high];
+		if (stack[j] < temp)
 		{
 			i++;
 			quick_array_swap(&(stack[i]), &(stack[j]));
@@ -45,13 +45,13 @@ int	partition_array(int stack[], int low, int high)
 
 void	quick_sort_array(int stack[], int low, int high)
 {
-	int		pi;
+	int		x;
 
 	if (low < high)
 	{
-		pi = partition_array(stack, low, high);
-		quick_sort_array(stack, low, pi - 1);
-		quick_sort_array(stack, pi + 1, high);
+		x = partition_array(stack, low, high);
+		quick_sort_array(stack, low, x - 1);
+		quick_sort_array(stack, x + 1, high);
 	}
 }
 
