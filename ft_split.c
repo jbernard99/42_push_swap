@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:12:02 by jbernard          #+#    #+#             */
-/*   Updated: 2022/02/04 23:26:09 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/02/27 17:34:57 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	**ft_split(char *s, char c)
 	int		i;
 	int		nb_words;
 
-	if (!s)
+	if (!s || s[0] == c)
 		return (0);
 	nb_words = get_word_count(s, c);
 	ptr = (char **)malloc(sizeof(char *) * (nb_words + 1));
