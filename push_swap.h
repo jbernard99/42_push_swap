@@ -64,7 +64,7 @@ t_arrays	*init_arrays(char *argv[], int argc);
 
 // -- validate_input.c -- //
 int			has_space(char *str);
-void		validate_input(char *argv[], int argc);
+int			validate_input(char *argv[], int argc);
 
 // -- tools.c -- //
 void		ft_putstr(char *str);

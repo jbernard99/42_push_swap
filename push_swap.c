@@ -60,11 +60,8 @@ int	main(int argc, char *argv[])
 			to_free = 1;
 			argc = split_argv_size(argv);
 		}
-		else
-		{
-			validate_input(argv, argc);
+		else if (validate_input(argv, argc))
 			return (0);
-		}
 	}
 	validate_input(argv, argc);
 	arrays = init_arrays(argv, argc);

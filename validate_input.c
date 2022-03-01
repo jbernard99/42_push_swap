@@ -48,7 +48,7 @@ void	check_min_max(int x)
 		error_message();
 }
 
-void	validate_input(char *argv[], int argc)
+int	validate_input(char *argv[], int argc)
 {
 	int	i;
 	int	j;
